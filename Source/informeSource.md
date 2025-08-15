@@ -6,6 +6,7 @@ classification: "Confidencial"
 ---
 
 ### **1. Resumen Ejecutivo**
+### hola
 
 En esta prueba de penetración, se evaluó la seguridad de la máquina "Source" (IP: `10.201.65.181`). Se descubrió una vulnerabilidad crítica de ejecución remota de comandos (RCE) no autenticada en el servicio Webmin, identificada como **CVE-2019-15107**. Esta vulnerabilidad fue explotada exitosamente desde la IP del atacante (`10.23.159.27`), otorgando acceso completo al sistema con privilegios de `root`.
 
