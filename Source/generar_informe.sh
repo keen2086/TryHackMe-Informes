@@ -1,4 +1,7 @@
 #!/bin/bash
+
+cd Source
+
 pandoc informeSource.md -o informeSource.pdf \
   --from markdown \
   --pdf-engine=xelatex \
@@ -7,4 +10,4 @@ pandoc informeSource.md -o informeSource.pdf \
   -V colorlinks=true \
   -V linkcolor=blue
 
-echo "✅ Informe exportado como informeSource.pdf"
+echo "✅ Informe exportado como Source/informeSource.pdf"
