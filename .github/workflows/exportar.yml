@@ -1,0 +1,29 @@
+name: Exportar informe a PDF
+
+on:
+  push:
+    paths:
+      - 'Source/informeSource.md'
+      - 'Source/generar_informe.sh'
+
+jobs:
+  exportar-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v3
+
+    - name: Instalar Pandoc y LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive-xetex
+
+    - name: Ejecutar script de exportación
+      run: bash Source/generar_informe.sh
+
+    - name: Subir PDF generado
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "📄 PDF actualizado automáticamente"
+        file_pattern: Source/informeSource.pdf
