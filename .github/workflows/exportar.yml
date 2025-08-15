@@ -23,7 +23,12 @@ jobs:
       run: bash Source/generar_informe.sh
 
     - name: Subir PDF generado
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "📄 PDF actualizado automáticamente"
-        file_pattern: Source/informeSource.pdf
+  uses: stefanzweifel/git-auto-commit-action@v5
+  with:
+    commit_message: "📄 PDF actualizado automáticamente"
+    file_pattern: Source/informeSource.pdf
+    commit_user_name: "github-actions[bot]"
+    commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+    push_options: "--force"
+    token: ${{ secrets.GITHUB_TOKEN }}
+
